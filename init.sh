@@ -3,7 +3,7 @@
 # Initialization of variables
 USER=""
 DOMAIN="github.com" # Default value
-REPOS=()
+REPOS_FILE="repos.txt" # The file from which to load the repository names
 
 # Command line arguments processing
 while [[ "$#" -gt 0 ]]; do
@@ -20,8 +20,16 @@ if [[ -z "$USER" ]]; then
     exit 1
 fi
 
-# List of your repository names
+if [ ! -f "$REPOS_FILE" ]; then
+    echo "Repository list file $REPOS_FILE does not exist."
+    exit 1
+fi
+
+# Read repository names from the file
 REPOS=()
+while IFS= read -r line; do
+    REPOS+=("$line")
+done < "$REPOS_FILE"
 
 for repo in "${REPOS[@]}"; do
   dir=$repo
