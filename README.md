@@ -1,4 +1,13 @@
-# GitBK
+<h1 align="center">GitBK</h1>
+
+<div align="center">
+
+![](https://img.shields.io/badge/PRs-welcome-green.svg)
+[![GitHub](https://img.shields.io/github/license/jparadadev/gitbk)](https://github.com/jparadadev/gitbk/blob/main/LICENSE)
+  
+</div>
+
+![](https://raw.githubusercontent.com/jparadadev/gitbk/assets/assets/logo.png)
 
 This Bash script automates the process of backing up or updating your GitHub repositories. It fetches a list of repository names from a specified `.bk` repository and either clones them (if they're not already present on your local machine) or updates them (if they already exist).
 
